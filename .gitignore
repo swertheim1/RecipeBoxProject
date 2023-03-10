@@ -1,0 +1,7 @@
+Lib/
+Scripts/
+pyvenv.cfg
+recipe_box_project/__pycache__/
+
+manage.py
+pyvenv.cfg
