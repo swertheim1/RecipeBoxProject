@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
 from .models import Recipe
 
@@ -6,21 +7,19 @@ from .models import Recipe
 
 def recipe_list_view(request):
 
-    # query_dict = request.GET
-
-    # try: 
-    #     query = int(query_dict.get('q'))
-    # except:
-    #     query = None
-    # recipe_obj = None
-
-    # if query is not None:
-    #     recipe_obj = Recipe.objects.get(id=query)
-
-    recipes = Recipe.objects.all().order_by('date')   
-    # context = {
-    #     'recipes': recipes
-    # }
-   
-
+    recipes = Recipe.objects.all().order_by('timestamp')   
     return render(request, 'recipes/recipe_list_view.html', {'recipes':recipes} )
+
+
+def recipe_detail_view(request, slug):
+    # return HttpResponse(slug)
+    recipe = Recipe.objects.get(slug=slug)
+    directions = []
+    
+    print('recipe_directions', directions)
+    for direction in directions:
+        print('step before append', directions)
+        directions.append(direction)
+    print('afer append', directions)
+
+    return render(request, 'recipes/recipe_detail_view.html', {'recipe':recipe, 'directions':directions } )

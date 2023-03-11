@@ -1,29 +1,15 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Recipe List View</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1>This is the Recipe List View page</h1>
-        <p> It will display a list of recipes </p>
+{% block content %}
+    <h1>This is the Recipe List View page</h1>
+    <p> It will display a list of recipes </p>
+    <div class="recipe">
+        {% for recipe in recipes %}
         <div class="recipe">
-            {% for recipe in recipes %}
-            <div class="recipe">
-                <h2><a href="#">{{ recipe.title }}</a></h2>
-                <p>{{ recipe.snippet }}</p>
-                {% comment %} <p>{{ recipe.ingredients }}</p>
-                <p>{{ recipe.steps }}</p>
-                <p>{{ recipe.date }}</p> {% endcomment %}
-            </div>
-            {% endfor %}
+            <h2><a href='{% url 'recipes:detail' slug=recipe.slug %}'>{{ recipe.title }}</a></h2>
+            <p>{{ recipe.snippet }}</p>
+            <p>{{ recipe.date }}</p>
         </div>
-        
-        <script src="" async defer></script>
-    </body>
-</html>
+        {% endfor %}
+    </div>
+{% endblock content %}

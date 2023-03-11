@@ -10,5 +10,6 @@ def home_view(request):
 
 
 def about_view(request):
-    # return HttpResponse('about_view')
-    return render(request, 'about.html')
+    return HttpResponse('about_view')
+
+
