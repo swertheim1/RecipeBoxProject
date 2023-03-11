@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='recipe-detail'>
+    <div class='recipe'>
+        <h2>{{ recipe.title }} </h2>
+        
+        <h4>{{ recipe.description }}</h4>
+
+            {% for ingredient in ingredients %}
+               <p> {{ recipe.ingredients }} </p>
+            {% endfor %}
+        
+            {% for direction in directions %}
+               <p> {{ recipe.direction }} </p>
+            {% endfor %}
+        
+        <p>{{ recipe.date }} </p>
+
+
+    </div>
+</div>
+
+
+{% endblock content %}
