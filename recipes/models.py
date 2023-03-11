@@ -12,7 +12,7 @@ class Recipe(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True) # automatically input time when record is created
     updated = models.DateTimeField(auto_now=True)
     slug = models.SlugField()
-    # add thumbnails
+    thumb = models.ImageField(default='default.png', blank=True)
     # add author
 
     def __str__(self):

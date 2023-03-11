@@ -10,8 +10,9 @@
     </head>
 
     <body>
+        <h1><a href="{% url 'recipes:list' %}"><img src="{% static 'logo.png' %}" alt="The Recipe Box"/></a></h1>
         <div class="wrapper">
-            <h1><a href='{% url 'recipes:list' %}'>Recipes</a></h1>
+            
             {% block content %}
             {% endblock content %}
         </div>

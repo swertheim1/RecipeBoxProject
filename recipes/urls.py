@@ -6,8 +6,7 @@ from . import views
 app_name='recipes'
 urlpatterns = [
     path('', views.recipe_list_view, name='list'),
-    # re_path(r'^(?P<slug>[\w-]+/$)', views.recipe_detail_view, name='detail'),
+    # path('create/', views.recipe_create_view, name='create'),
     path('<slug:slug>/', views.recipe_detail_view, name='detail'),
-    
-
+    # path('<slug:slug>/edit/', views.recipe_update_view, name='update'),
 ]

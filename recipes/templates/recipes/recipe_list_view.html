@@ -3,10 +3,10 @@
 {% block content %}
     <h1>This is the Recipe List View page</h1>
     <p> It will display a list of recipes </p>
-    <div class="recipe">
+    <div class="recipes">
         {% for recipe in recipes %}
         <div class="recipe">
-            <h2><a href='{% url 'recipes:detail' slug=recipe.slug %}'>{{ recipe.title }}</a></h2>
+            <h2><a href="{% url 'recipes:detail' slug=recipe.slug %}">{{ recipe.title }}</a></h2>
             <p>{{ recipe.snippet }}</p>
             <p>{{ recipe.date }}</p>
         </div>
