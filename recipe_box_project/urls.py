@@ -27,7 +27,7 @@ from . import views
 
 
 urlpatterns = [
-    
+    path('accounts/', include('accounts.urls')),
     path('recipes/', include('recipes.urls')),    #import from the recipe app
     path('about/', views.about_view),
     path('admin/', admin.site.urls),
