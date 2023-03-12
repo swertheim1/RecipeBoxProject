@@ -3,8 +3,12 @@ body{
     color: black;
 }
 
+header {
+    background-color:darkkhaki;
+}
 
-h1, h2, h3, h4, h5{
+
+h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     margin: 0;
     text-align:center;
@@ -29,11 +33,10 @@ div.wrapper h1 {
 
 .btn {
     background-color: #00B0F0;
-    outline-color: #00B0F0;
+    outline-color: #00B0F0; 
     outline-width: 1px;
     color: white;
     cursor: auto;
-
 }
 
 header {
@@ -52,10 +55,10 @@ header {
 
 .recipe {
     padding: 10px;
-    border: 1px solid #00B0F0;
+    border: solid;
     position: relative;
     padding-bottom: 40px;
-
+    border-color: #00B0F0; 
 }
 
 .recipe h2 {
@@ -77,6 +80,7 @@ header {
 .recipe-detail .recipe {
     padding: 0;
     image-rendering: optimizeSpeed;
+    border: None;
 }
 
 img {
@@ -93,6 +97,3 @@ submitted-by {
 
 }
 
-.create-recipe {
-    display: block;
-}

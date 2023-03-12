@@ -4,18 +4,15 @@
 
 <div class='recipe-detail'>
     <div class='recipe'>
+        {% comment %} display recipe fields for individual recipes {% endcomment %}
+
+        {% comment %} need to figure out how to list instructions and ingredients one per line {% endcomment %}
         <img src="{{ recipe.thumb.url }}"/>
         <h2>{{ recipe.title }} </h2>
-        
         <h4>{{ recipe.description }}</h4>
-            {% for ingredient in ingredients %}
-               <p> {{ recipe.ingredients }} </p>
-            {% endfor %}
-        
-            {% for direction in directions %}
-               <p> {{ recipe.direction }} </p>
-            {% endfor %}
-
+        <h5> {{ recipe.ingredients }} </h5>
+        <h5> {{ recipe.directions }} </h5>
+        <h6> {{ recipe.slug }} </h6>
 
         <h5> Submitted by:  {{ recipe.user }} </h5>
         

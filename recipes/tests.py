@@ -70,8 +70,8 @@ class RecipeTestCase(TestCase):
 #     def test_recipe_delete(self):
 #         self.number_of_deletions = 3
 
-        RecipeIngredient.objects.filter(id__in=list(RecipeIngredient.objects.values_list('pk', flat=True)[:self.number_of_deletions])).delete()
+        # RecipeIngredient.objects.filter(id__in=list(RecipeIngredient.objects.values_list('pk', flat=True)[:self.number_of_deletions])).delete()
         
-        qs = RecipeIngredient.objects.all()
-        self.assertEqual(qs.count(), self.number_of_ingredients - self.number_of_deletions)
+        # qs = RecipeIngredient.objects.all()
+        # self.assertEqual(qs.count(), self.number_of_ingredients - self.number_of_deletions)
     

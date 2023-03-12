@@ -6,24 +6,21 @@
         <h2> Create a New Recipe </h2>
         
         <form class='model-create-recipe-form' action"{% url 'recipes:create' %}" method='post' enctype="multipart/form-data">
+            {% comment %} using form object to display model fields. {% endcomment %}
             {% csrf_token %}
-
-            Recipe Name: {{ form.title }} <br>
-            Description: {{ form.description }} <br>
-            Ingredients: {{ form.ingredients }} <br>
-            Directions: {{ form.directions }} <br>
-            Slug: {{ form.slug }} <br>
-            Select Image: {{ form.thumb }} <br>
+            
+            <p>Recipe Name: {{ form.title }} </p><br>
+            <p> Description: {{ form.description }} </p><br>
+            <p>Ingredients: {{ form.ingredients }} </p><br>
+            <p>Directions: {{ form.directions }} </p><br>
+            <p>Select File: {{ form.thumb }}</p> <br>
+            <p>Enter Slug: {{ form.slug }}</p>
 
             <button type='submit' value=submit> Save Recipe </button>
-            
-            
         </form>
         <br>
-
-
-
     </div>
+        <script src="/static/slugify.js"></script>
 
 
 {% endblock %}
