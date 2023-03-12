@@ -1,17 +1,14 @@
 body{
-    background-color: beige;
-    /* background-image: url(/static/stars.png); */
-    background-repeat: no-repeat;
-    color: #000;
+    background-color: #e8dcb5;
+    color: black;
 }
 
-body *{
-    font-family: Ubuntu;
-}
 
 h1, h2, h3, h4, h5{
     font-weight: normal;
     margin: 0;
+    text-align:center;
+    color: black;
 }
 
 a, a:hover, a:visited{
@@ -19,6 +16,80 @@ a, a:hover, a:visited{
     text-decoration: underline;
 }
 
-p {
-    size: 24px;
+.wrapper {
+    max-width: 1060px;
+    margin: 0 auto;
 }
+
+div.wrapper h1 {
+    text-align: center;
+    margin: 100px;
+
+}
+
+.btn {
+    background-color: #00B0F0;
+    outline-color: #00B0F0;
+    outline-width: 1px;
+    color: white;
+    cursor: auto;
+
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px 0px;
+
+}
+
+.recipes {
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr ;
+    grid-gap: 30px;
+
+}
+
+.recipe {
+    padding: 10px;
+    border: 1px solid #00B0F0;
+    position: relative;
+    padding-bottom: 40px;
+
+}
+
+.recipe h2 {
+    font-size: 2.0em;
+    margin: 20px auto;
+    
+}
+
+.recipe h5 {
+    font-size: 1.2em;
+    margin: 20px auto;
+}
+
+.recipe p {
+    font-size: 1.5em;
+    margin: 20px;
+}
+
+.recipe-detail .recipe {
+    padding: 0;
+    image-rendering: optimizeSpeed;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 30px auto;
+    width: 50%;
+
+}
+
+submitted-by {
+    padding: 10px;
+
+
+}
+

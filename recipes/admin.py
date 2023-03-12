@@ -6,7 +6,13 @@ from .models import Recipe, RecipeIngredient
 
 User = get_user_model()
 
-admin.site.register(RecipeIngredient)
+class RecipeIngredientsAdmin(admin.ModelAdmin):
+    list_display = ['user', 'recipe', 'name', 'quantity', 'unit', 'description']
+    read_only_fields = ['timestamp', 'updated']
+    raw_id_fields = ['user']
+    search_fields = ['title', 'description']
+
+admin.site.register(RecipeIngredient, RecipeIngredientsAdmin)
 
 
 

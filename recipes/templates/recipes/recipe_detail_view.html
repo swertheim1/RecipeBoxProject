@@ -8,7 +8,6 @@
         <h2>{{ recipe.title }} </h2>
         
         <h4>{{ recipe.description }}</h4>
-
             {% for ingredient in ingredients %}
                <p> {{ recipe.ingredients }} </p>
             {% endfor %}
@@ -16,6 +15,9 @@
             {% for direction in directions %}
                <p> {{ recipe.direction }} </p>
             {% endfor %}
+
+
+        <h5> Submitted by:  {{ recipe.user }} </h5>
         
         <p>{{ recipe.date }} </p>
 

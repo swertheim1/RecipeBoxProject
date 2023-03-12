@@ -26,15 +26,15 @@ class RecipeIngredient(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default='1',)
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     name = models.CharField(max_length=220)
-    quantity = models.CharField(max_length=20)
+    quantity = models.FloatField(max_length=20)
     unit = models.CharField(max_length=20, validators=[validate_unit_of_measure])
     description = models.TextField(blank=True, null=True, max_length=255)
     directions = models.TextField(blank=True, null=True, max_length=255)
     timestamp = models.DateTimeField(auto_now_add=True) # automatically input time when record is created
     updated = models.DateTimeField(auto_now=True)
 
-    # def __str__(self):
-    #     return self.quantity, self.unit, self.name
+    def __str__(self):
+        return self.name
     
 
 # class RecipeImage():

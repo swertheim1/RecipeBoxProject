@@ -22,6 +22,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 
 from . import views
+from recipes import views as recipe_views
 
 
 
@@ -31,7 +32,7 @@ urlpatterns = [
     path('recipes/', include('recipes.urls')),    #import from the recipe app
     path('about/', views.about_view),
     path('admin/', admin.site.urls),
-    path('', views.home_view),
+    path('', recipe_views.recipe_list_view, name='home'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()    # works in debug mode

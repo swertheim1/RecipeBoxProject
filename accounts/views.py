@@ -28,7 +28,13 @@ def login_view(request):
             # login the user
             user = form.get_user()
             login(request, user)
-            return redirect('recipes:list') # don't want this     
+            # if the user came from the recipes/create page
+            # redirect them back to that page after they login
+            # otherwise redirect them to the list of recipes
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('recipes:list') # don't want this     
     else:
         form = AuthenticationForm()
     return render(request, 'accounts/login.html', { 'form':form })

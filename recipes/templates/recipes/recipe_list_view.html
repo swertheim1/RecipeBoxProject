@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>This is the Recipe List View page</h1>
-    <p> It will display a list of recipes </p>
+    <h1>Recipe List</h1>
+    
     <div class="recipes">
         {% for recipe in recipes %}
         <div class="recipe">
             <h2><a href="{% url 'recipes:detail' slug=recipe.slug %}">{{ recipe.title }}</a></h2>
             <p>{{ recipe.snippet }}</p>
-            <p>{{ recipe.date }}</p>
+            <p><img src="{{ recipe.thumb.url }}"/></p>
+            <p>{{ recipe.timestamp }}</p>
+            <p class='submitted-by'>Submitted by: {{ recipe.user }}</p>
         </div>
         {% endfor %}
     </div>
