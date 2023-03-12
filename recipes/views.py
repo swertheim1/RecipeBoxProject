@@ -45,9 +45,12 @@ def recipe_search_view(request):
 @login_required(login_url="/accounts/login/")
 
 def recipe_create_view(request):
-    form = CreateRecipeForm(request.POST, request.FILES)
-    
-    return render(request, 'recipes/recipe_create_view.html', {form:form})
+    if request.POST:
+        form = CreateRecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('home')
+    return render(request, 'recipes/recipe_create_view.html', {'form': form})
 
 
 
