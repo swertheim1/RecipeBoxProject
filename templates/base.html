@@ -11,6 +11,7 @@
 
     <body>
         <header class="wrapper">
+            {% comment %} Create Buttons that appear on each page {% endcomment %}
 
             <h1><a href="{% url 'home' %}"><img src="{% static 'logo2.png' %}" alt="The Recipe Box"/></a></h1>
             <nav>
@@ -19,21 +20,21 @@
                     {% csrf_token %}
                     <button class='btn' type='submit'>Login</button>
                 </form>
-
                 <br>
 
                 <form class='logout-link' action="{% url 'accounts:logout' %}" method='post'>
                     {% csrf_token %}
                     <button class='btn' type='submit'>Logout</button>
                 </form>
-
                 <br>
 
                 <form class='create-recipe-link' action="{% url 'recipes:create' %}" method='post'>
                     {% csrf_token %}
+                    
                     <button class='btn' type='submit'>Create Recipe</button>
                 </form>
                 <br>
+
                 <form class='search-recipe-link' action={% url 'recipes:search' %} method='post' enctype="multipart/form-data">
                     {% csrf_token %}
                     <form class='query' action="{% url 'recipes:search' %}" method='post' >
